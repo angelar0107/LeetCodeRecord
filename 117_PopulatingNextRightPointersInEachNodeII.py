@@ -26,4 +26,21 @@ class Solution:
                     continue
                 curr.next = queue[0]
         return root
-        
+
+
+# Constant extre space solution
+    def connect2(self,root):
+        if not root:
+            return
+        dummy = root
+        nextlevel = level = Node(0,None,None,None)
+        while root:
+            if root.left:
+                level.next = root.left
+                level = level.next
+            if root.right:
+                level.next = root.right
+                level = level.next
+            root = root.next
+        self.connect2(nextlevel.next)
+        return dummy        
