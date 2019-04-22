@@ -1,7 +1,7 @@
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         m = len(obstacleGrid)
-        if not obstacleGrid or not m:
+        if not obstacleGrid or not grid[0]:
             return 0
         n = len(obstacleGrid[0])
         dp = [[1 for _ in range(n)] for _ in range(m)]
